@@ -1,9 +1,9 @@
-[submodule "i3-wm-multi-disp-scripts"]
-	path = i3_wm_multi_disp_scripts
-	url = git@github.com:sainathadapa/i3-project-focus-workflow.git
 [submodule "i3blocks-contrib"]
 	path = i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib.git
 [submodule "myrmidon"]
 	path = myrmidon
 	url = https://github.com/moustacheful/myrmidon.git
+[submodule "sway-wm-multi-disp-scripts"]
+	path = sway-wm-multi-disp-scripts
+	url = https://github.com/sainathadapa/sway-wm-multi-disp-scripts.git
