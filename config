@@ -24,7 +24,7 @@ input "type:touchpad" {
 
 # Set key folder paths
 set $i3path ~/.config/sway
-set $i3multipath ~/.config/sway/i3_wm_multi_disp_scripts
+set $i3multipath ~/.config/sway/sway-wm-multi-disp-scripts
 
 # set default desktop layout
 workspace_layout stacking
@@ -36,7 +36,7 @@ hide_edge_borders smart
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Source Code Pro 10
+font pango: Source Code Pro 9
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -56,7 +56,7 @@ focus_follows_mouse yes
 bindsym --to-code $mod+Return exec $term
 
 # kill focused window
-bindsym --to-code $mod+q kill
+bindsym --to-code F4 kill
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -257,6 +257,7 @@ for_window [instance="^crx.*$" window_role="pop-up"]  sticky   enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
+for_window [app_id="zenity"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
@@ -346,10 +347,14 @@ exec insync start
 
 for_window [instance="dropdownTerminal"] floating enable
 for_window [instance="dropdownTerminal"] resize set 1500 900
-for_window [instance="dropdownTerminal"] border none 
-for_window [instance="dropdownTerminal"] move position center 
+for_window [instance="dropdownTerminal"] border none
+for_window [instance="dropdownTerminal"] move position center
 for_window [instance="dropdownTerminal"] move scratchpad
-exec urxvt -bg rgba:0000/0000/0000/c800 --depth 32 -pe tabbed -name dropdownTerminal
+# exec urxvt -bg rgba:0000/0000/0000/c800 --depth 32 -pe tabbed -name dropdownTerminal
+
+for_window [app_id="terminal_scratchpad"] move scratchpad, resize set 1500 900, opacity 0.25
+# bindsym F1 exec swaymsg [app_id="terminal_scratchpad"] scratchpad show
+# exec termite --name=terminal_scratchpad
 
 
 set $gnome-schema org.gnome.desktop.interface
