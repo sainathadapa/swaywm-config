@@ -16,17 +16,17 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 input "type:touchpad" {
-    dwt enabled
+    dwt enabled # enable disable-while-typing for this device
     tap enabled
-    natural_scroll enabled
-    middle_emulation enabled
+    natural_scroll disabled # enable inverted scrolling
+    middle_emulation enabled # enable middle click emulation
 }
 
 # Set key folder paths
 set $i3path ~/.config/sway
 set $i3multipath ~/.config/sway/i3_wm_multi_disp_scripts
 
-# set default desktop layout (default is tiling)
+# set default desktop layout
 workspace_layout stacking
 
 # Window borders
@@ -290,6 +290,7 @@ for_window [urgent=latest] focus
 # finds out, if available)
 bar {
     status_command py3status -c $i3path/i3status.conf
+    #swaybar_command waybar
 
     position top
     colors {
@@ -331,8 +332,8 @@ smart_borders on
 #############################
 ## Autostart applications ###
 #############################
-exec xrdb ~/.Xresources
-exec mako
+# exec xrdb ~/.Xresources # not needed, copy .Xresources to .Xdefaults
+exec mako --default-timeout=5000
 
 # create initial workspaces
 exec $i3multipath/.env/bin/python $i3multipath/create_new_project.py main
