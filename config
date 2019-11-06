@@ -283,7 +283,7 @@ for_window [app_id="zenity"] floating enable
 for_window [class="XEyes"] floating enable
 
 # Prepend title with program name
-for_window [class=".*"] title_format "%class - %title"
+for_window [title="."] title_format "%app_id%class - %title (%shell)"
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
