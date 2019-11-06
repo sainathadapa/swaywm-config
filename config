@@ -146,8 +146,7 @@ bindsym --to-code $mod+x border toggle
 # Show the first scratchpad window
 bindsym --to-code $mod+z scratchpad show
 # Lock the system
-# bindsym --to-code $mod+q exec i3lock -i $i3path/i3-lock-screen.png -t -f
-# bindsym --to-code $mod+q exec --no-startup-id blurlock
+bindsym --to-code $mod+q exec swaylock -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 # toggle tiling / floating
 bindsym --to-code $mod+Shift+space floating toggle
