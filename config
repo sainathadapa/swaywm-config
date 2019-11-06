@@ -27,7 +27,7 @@ set $i3path ~/.config/sway
 set $i3multipath ~/.config/sway/sway-wm-multi-disp-scripts
 
 # set default desktop layout
-workspace_layout stacking
+workspace_layout tabbed
 
 # Window borders
 default_border pixel 1
