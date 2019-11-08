@@ -27,7 +27,8 @@ set $i3path ~/.config/sway
 set $i3multipath ~/.config/sway/sway-wm-multi-disp-scripts
 
 # set default desktop layout
-workspace_layout tabbed
+# default / stacking / tabbed
+workspace_layout stacking
 
 # Window borders
 default_border pixel 1
@@ -278,8 +279,10 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [app_id="zenity"] floating enable
 for_window [class="XEyes"] floating enable
+# Wayland apps
+for_window [app_id="zenity"] floating enable
+for_window [app_id="wdisplays"] floating enable
 
 # Prepend title with program name
 for_window [title="."] title_format "%app_id%class - %title (%shell)"
