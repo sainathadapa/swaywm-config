@@ -347,7 +347,7 @@ for_window [app_id="dropdownTerminal"] resize set 1500 900
 for_window [app_id="dropdownTerminal"] border none
 for_window [app_id="dropdownTerminal"] move position center
 for_window [app_id="dropdownTerminal"] move scratchpad
-exec kitty --config=/home/sainath/.config/kitty/kitty_transparent.conf --class=dropdownTerminal
+exec kitty --config=/home/sai/.config/kitty/kitty_transparent.conf --class=dropdownTerminal
 
 set $gnome-schema org.gnome.desktop.interface
 
