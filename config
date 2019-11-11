@@ -86,21 +86,20 @@ bindsym --to-code $mod+Shift+l move right
 
 
 # Set shut down, restart and locking features
-bindsym --to-code $mod+minus mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym --to-code l exec --no-startup-id i3exit lock, mode "default"
-    bindsym --to-code s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym --to-code u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym --to-code e exec --no-startup-id i3exit logout, mode "default"
-    bindsym --to-code h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym --to-code r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym --to-code Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id swaylock, mode "default"
+    bindsym e exec --no-startup-id swaymsg exit, mode "default"
+    bindsym s exec --no-startup-id swaylock -f && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id swaylock -f && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot -i, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
-    bindsym --to-code Return mode "default"
-    bindsym --to-code Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Control+bracketleft mode "default"
 }
+bindsym --to-code $mod+minus mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
