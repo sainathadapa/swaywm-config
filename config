@@ -340,6 +340,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec dropbox start
 exec insync start
 exec emacs
+exec /home/sainath/emacs-spacemacs-config/run_grasp.sh # TODO: move this to the emacs config
 
 for_window [app_id="dropdownTerminal"] floating enable
 for_window [app_id="dropdownTerminal"] resize set 1500 900
