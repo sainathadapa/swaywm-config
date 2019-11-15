@@ -221,6 +221,7 @@ bindsym --to-code $mod+Tab             exec $i3multipath/switcher.sh
 
 # rofi bindings
 bindsym --to-code F7 exec "rofi -show-icons -modi combi -show combi -combi-modi drun,run"
+bindsym --to-code F9 exec $i3path/utils/run_a_script.sh
 bindsym --to-code F12 exec  rofi -show-icons -show window
 
 # launch categorized menu

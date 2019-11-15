@@ -1,6 +1,3 @@
-[submodule "myrmidon"]
-	path = myrmidon
-	url = https://github.com/moustacheful/myrmidon.git
 [submodule "sway-wm-multi-disp-scripts"]
 	path = sway-wm-multi-disp-scripts
 	url = https://github.com/sainathadapa/sway-wm-multi-disp-scripts.git
