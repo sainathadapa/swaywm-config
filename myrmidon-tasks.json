@@ -1,10 +1,10 @@
 [
   {
-    "name": "Screenshot",
-    "command": "i3-scrot"
+    "name": "Screenshot a region",
+    "command": "utils/grim_screenshot_region.sh"
   },
   {
-    "name": "Screenshot selection",
-    "command": "i3-scrot -s"
-  }
+    "name": "Brightness slider",
+    "command": "utils/brightness_gui.sh"
+  },
 ]
