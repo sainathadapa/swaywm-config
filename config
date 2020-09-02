@@ -22,6 +22,10 @@ input "type:touchpad" {
     middle_emulation enabled # enable middle click emulation
 }
 
+input "type:keyboard" {
+    xkb_options caps:swapescape
+}
+
 # Set key folder paths
 set $i3path ~/.config/sway
 set $i3multipath ~/.config/sway/sway-wm-multi-disp-scripts
@@ -73,8 +77,8 @@ bindsym --to-code F4 kill
 
 
 # Screenshot commands
-set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenshot grim ~/Downloads/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip slurp | grim -g - ~/Downloads/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 bindsym --to-code $mod+Print exec $screenshot
 bindsym --to-code $mod+Shift+Print exec $screenclip
 
@@ -245,6 +249,7 @@ popup_during_fullscreen leave_fullscreen
 show_marks yes
 
 for_window [class="^.*"] border pixel 2
+for_window [app_id="^.*"] border pixel 2
 
 # Disable floating for nemo windows
 for_window [class="Nemo" instance="^desktop_window$"] floating disable
@@ -344,7 +349,7 @@ exec emacs
 exec /home/sai/emacs-spacemacs-config/run_grasp.sh # TODO: move this to the emacs config
 
 for_window [app_id="dropdownTerminal"] floating enable
-for_window [app_id="dropdownTerminal"] resize set 1500 900
+for_window [app_id="dropdownTerminal"] resize set 1200 675
 for_window [app_id="dropdownTerminal"] border none
 for_window [app_id="dropdownTerminal"] move position center
 for_window [app_id="dropdownTerminal"] move scratchpad
